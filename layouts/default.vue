@@ -1,12 +1,18 @@
 <script setup lang="ts">
     import type { NavigationMenuItem } from '@nuxt/ui'
 
+    const slideoverOpen = ref(false)
+    const route = useRoute()
+
+    watch(() => route.fullPath, () => {
+    slideoverOpen.value = false
+    })
+
     const items = ref<NavigationMenuItem[][]>([[
         {
             label: 'Home',
             icon: 'material-symbols:home-outline-rounded',
-            to: '/',
-            active: true
+            to: '/'
         },
         {
             label: 'About',
@@ -70,9 +76,11 @@
                 :items="items" 
                 highlight 
                 />
-                <UButton>
-                    Log In
-                </UButton>
+                <NuxtLink to="login">
+                    <UButton>
+                        Log In
+                    </UButton>
+                </NuxtLink>
             </div>
         </header>
         <header 
@@ -87,11 +95,12 @@
             ">
                 My AC Help
             </p>
-            <USlideover title="Navigation" >
-                <UButton variant="subtle" color="neutral" class="p-1">
+            <USlideover v-model:open="slideoverOpen" title="Navigation" >
+                <UButton variant="subtle" color="neutral" class="p-1" @click="slideoverOpen = true">
                     <UIcon name="material-symbols:menu-rounded" />
                 </UButton>
                 <template #body>
+                    <NuxtLink to="/login"><UButton class="mb-2">Log In</UButton></NuxtLink>
                     <UNavigationMenu :items="items" orientation="vertical"/>
                 </template>
             </USlideover>
