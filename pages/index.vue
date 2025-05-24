@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-    <div>
+    <div class="h-300">
         HOME
     </div>
 </template>
