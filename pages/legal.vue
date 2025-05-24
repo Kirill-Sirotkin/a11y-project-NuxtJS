@@ -2,6 +2,6 @@
 
 <template>
     <div>
-        HOME
+        LEGAL
     </div>
 </template>

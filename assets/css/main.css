@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-body {
+/* body {
     @apply bg-gray-100 text-gray-900;
-}
+} */

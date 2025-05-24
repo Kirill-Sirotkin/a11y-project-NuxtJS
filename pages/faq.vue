@@ -2,6 +2,6 @@
 
 <template>
     <div>
-        HOME
+        FAQ
     </div>
 </template>

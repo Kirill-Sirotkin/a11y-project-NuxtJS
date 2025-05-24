@@ -2,6 +2,6 @@
 
 <template>
     <div>
-        HOME
+        BLOG
     </div>
 </template>

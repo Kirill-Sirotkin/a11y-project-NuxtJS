@@ -2,6 +2,6 @@
 
 <template>
     <div>
-        HOME
+        O AUTH CALLBACK
     </div>
 </template>
