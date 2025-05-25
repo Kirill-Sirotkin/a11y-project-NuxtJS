@@ -50,6 +50,8 @@ const footerItems = ref<NavigationMenuItem[][]>([[
                         flex 
                         items-center
                         gap-2
+                        pl-2
+                        md:pl-0
                     "
                 >
                     <UIcon name="material-symbols:mail-outline-rounded" />
