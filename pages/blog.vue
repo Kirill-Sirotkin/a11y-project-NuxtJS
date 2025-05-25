@@ -2,6 +2,6 @@
 
 <template>
     <div>
-        PRICING
+        BLOG
     </div>
 </template>
