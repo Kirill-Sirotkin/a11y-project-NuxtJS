@@ -1,7 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-    <div class="h-300">
-        HOME
+    <div class="p-4">
+        <PagesIndexTitle />
+        <PagesIndexAdvantageCardContainer />
     </div>
 </template>
