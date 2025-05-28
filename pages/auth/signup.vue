@@ -1,9 +1,17 @@
 <script setup lang="ts">
-
+definePageMeta({
+    middleware: ['auth-guard'],
+});
 </script>
 
 <template>
-    <div>
-        SIGNUP
+    <div 
+        class="
+            flex flex-col
+            gap-2
+            p-4
+        "
+    >
+        <PagesSignupFormCard />
     </div>
 </template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-    middleware: ['login-guard'],
+    middleware: ['auth-guard'],
 });
 </script>
 

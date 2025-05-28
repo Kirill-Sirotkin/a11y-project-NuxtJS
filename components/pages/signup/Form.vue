@@ -7,13 +7,14 @@ type Schema = v.InferOutput<typeof schema>
 
 const schema = v.object({
     email: v.pipe(v.string(), v.email('Invalid email')),
-    // password: v.pipe(v.string(), v.minLength(8, 'Must be at least 8 characters'))
-    password: v.pipe(v.string())
+    password: v.pipe(v.string(), v.minLength(8, 'Must be at least 8 characters')),
+    repeatPassword: v.pipe(v.string(), v.minLength(8, 'Must be at least 8 characters'))
 })
 
 const state = reactive({
     email: '',
-    password: ''
+    password: '',
+    repeatPassword: ''
 })
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
@@ -21,11 +22,12 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     console.log(event.data)
 
     // ------------------
-    const res: { accessToken: string, refreshToken: string } = await $fetch('http://localhost:3001/auth/login', {
+    const res: { accessToken: string, refreshToken: string } = await $fetch('http://localhost:3001/auth/register', {
         method: 'POST',
         body: {
             email: event.data.email,
-            password: event.data.password
+            password: event.data.password,
+            repeatPassword: event.data.repeatPassword
         }
     })
     localStorage.setItem('access-token', res.accessToken)
@@ -54,6 +56,14 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         <UFormField label="Password" name="password" required>
             <UInput 
                 v-model="state.password" 
+                placeholder="********"
+                type="password" 
+                class="w-full" 
+            />
+        </UFormField>
+        <UFormField label="Repeat Password" name="repeatPassword" required>
+            <UInput 
+                v-model="state.repeatPassword" 
                 placeholder="********"
                 type="password" 
                 class="w-full" 

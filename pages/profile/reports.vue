@@ -3,7 +3,7 @@ import type { NavigationMenuItem, FormSubmitEvent } from '@nuxt/ui';
 import * as v from 'valibot'
 
 definePageMeta({
-    middleware: ['auth-guard'],
+    middleware: ['token-guard'],
 });
 
 const schema = v.object({

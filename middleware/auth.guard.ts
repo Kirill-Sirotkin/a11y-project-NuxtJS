@@ -5,7 +5,7 @@ export default defineNuxtRouteMiddleware(async (_to, _from) => {
     console.log('Loaded from localStorage access:', accessToken)
     const refreshToken = localStorage.getItem('refresh-token')
     console.log('Loaded from localStorage refresh:', refreshToken)
-
+    
     const res = await confirmAccessToken(accessToken ?? '', refreshToken ?? '')
     console.log(`confirm result: ${JSON.stringify(res)}`)
 
@@ -13,9 +13,6 @@ export default defineNuxtRouteMiddleware(async (_to, _from) => {
     localStorage.setItem('refresh-token', res.refreshToken)
 
     if (res.ok) {
-        // return navigateTo(_to.fullPath)
-        return
+        return navigateTo('/profile')
     }
-
-    return navigateTo('/auth/login') 
 })

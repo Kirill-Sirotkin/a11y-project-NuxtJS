@@ -13,7 +13,19 @@ const { title, text } = props;
 </script>
 
 <template>
-    <UCard variant="subtle" class="flex-1 bg-primary shadow-2xl text-xs md:text-lg min-w-0">
+    <UCard 
+        variant="subtle" 
+        class="
+            flex-1 
+            shadow-2xl 
+            bg-primary
+            text-neutral-50
+            text-xs 
+            min-w-0
+            md:text-lg 
+            dark:text-inverted
+        "
+    >
         <template #header>
             <div class="flex items-center gap-2">
                 <UIcon name="material-symbols:timer-outline-rounded" />

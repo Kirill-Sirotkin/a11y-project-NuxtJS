@@ -2,7 +2,7 @@
 import type { NavigationMenuItem } from '@nuxt/ui';
 
 definePageMeta({
-    middleware: ['auth-guard'],
+    middleware: ['token-guard'],
 });
 
 const items = ref<NavigationMenuItem[][]>([[
