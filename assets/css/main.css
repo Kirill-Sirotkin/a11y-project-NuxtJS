@@ -1,8 +1,11 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+@theme {
+    --breakpoint-xs: 24rem;
+}
+
 body {
-    /* @apply bg-gray-100 text-gray-900; */
     scrollbar-gutter: stable both-edges;
     scrollbar-width: thin;
 }

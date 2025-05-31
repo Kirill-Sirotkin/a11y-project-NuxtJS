@@ -1,9 +1,13 @@
 <script setup lang="ts">
-const slideoverOpen = ref(false)
-const route = useRoute()
-watch(() => route.fullPath, () => {
-    slideoverOpen.value = false
-})
+import type { NavigationMenuItem } from '@nuxt/ui';
+
+const items = ref<NavigationMenuItem[][]>([[
+    {
+        label: 'Home',
+        icon: 'material-symbols:home-outline',
+        to: '/',
+    },
+]])
 </script>
 
 <template>
@@ -21,20 +25,20 @@ watch(() => route.fullPath, () => {
             <LayoutsLogo />
         </div>
         
-        <div class="flex gap-2 md:hidden">
-            <div class="flex justify-end">
-                <LayoutsLogIn />
-            </div>
+        <div class="flex md:hidden">
             <div class="flex justify-center">
-                <LayoutsDefaultHeaderNavigation />
+                <UNavigationMenu :items="items" />
+            </div>
+            <div class="flex justify-end">
+                <LayoutsLogOut />
             </div>
         </div>
 
         <div class="hidden justify-center md:flex">
-            <LayoutsDefaultHeaderNavigation />
+            <UNavigationMenu :items="items" />
         </div>
         <div class="hidden justify-end md:flex">
-            <LayoutsLogIn />
+            <LayoutsLogOut />
         </div>
     </header>
 </template>

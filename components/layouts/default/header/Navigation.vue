@@ -2,7 +2,6 @@
 import type { NavigationMenuItem } from '@nuxt/ui';
 
 const open = ref(false)
-
 function closeSlideover() {
     open.value = false
 }
@@ -57,8 +56,6 @@ const items = ref<NavigationMenuItem[][]>([[
         "
     >
         <UNavigationMenu :items="items" />
-        <UButton label="Log In" to="/auth/login" />
-        <LayoutsDefaultHeaderColorModeButton />
     </div>
 
     <!-- Slideover Nav on small screens -->
@@ -69,12 +66,6 @@ const items = ref<NavigationMenuItem[][]>([[
             md:hidden
         "
     >
-        <LayoutsDefaultHeaderColorModeButton />
-        <UButton 
-            label="Log In" 
-            to="/auth/login"
-            @click="closeSlideover"
-        />
         <USlideover 
             v-model:open="open"
             title="Navigation"
