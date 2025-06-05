@@ -2,8 +2,9 @@
 import type { AccessTokenConfirmResult } from "~/models/AccessTokenConfirmResult";
 
 export default async function (accessToken: string, refreshToken: string): Promise<AccessTokenConfirmResult> {
+    const config = useRuntimeConfig()
     try {
-        const res = await $fetch('http://localhost:3001/auth/confirm-token', {
+        const res = await $fetch(`${config.public.serverUrl}/auth/confirm-token`, {
             headers: {
                 'Authorization': `Bearer ${accessToken}`,
             }
@@ -16,7 +17,7 @@ export default async function (accessToken: string, refreshToken: string): Promi
         return { ok: true, accessToken, refreshToken}
     } catch (err) {
         try {
-            const res: { accessToken: string, refreshToken: string } = await $fetch('http://localhost:3001/auth/refresh', {
+            const res: { accessToken: string, refreshToken: string } = await $fetch(`${config.public.serverUrl}/auth/refresh`, {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${refreshToken}`,

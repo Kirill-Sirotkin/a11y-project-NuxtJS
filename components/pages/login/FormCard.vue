@@ -1,6 +1,7 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
 function oAuth() {
-    window.location.href = 'http://localhost:3001/auth/google'
+    window.location.href = `${config.public.serverUrl}/auth/google`
 }
 </script>
 

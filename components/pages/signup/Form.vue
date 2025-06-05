@@ -17,12 +17,15 @@ const state = reactive({
     repeatPassword: ''
 })
 
+const accessTokenCookie = useCookie('access-token')
+const refreshTokenCookie = useCookie('refresh-token')
+const config = useRuntimeConfig()
 async function onSubmit(event: FormSubmitEvent<Schema>) {
     toast.add({ title: 'Success', description: 'The form has been submitted.', color: 'success' })
     console.log(event.data)
 
     // ------------------
-    const res: { accessToken: string, refreshToken: string } = await $fetch('http://localhost:3001/auth/register', {
+    const res: { accessToken: string, refreshToken: string } = await $fetch(`${config.public.serverUrl}/auth/register`, {
         method: 'POST',
         body: {
             email: event.data.email,
@@ -32,6 +35,8 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     })
     localStorage.setItem('access-token', res.accessToken)
     localStorage.setItem('refresh-token', res.refreshToken)
+    accessTokenCookie.value = res.accessToken
+    refreshTokenCookie.value = res.refreshToken
     navigateTo('/profile')
     // ------------------
 }

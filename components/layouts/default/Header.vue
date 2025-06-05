@@ -13,8 +13,10 @@ watch(() => route.fullPath, () => {
             justify-between items-center
             p-4
             backdrop-blur-sm shadow-md
+            bg-gray-950/10
             sticky top-0 z-50
             md:grid md:grid-cols-3
+            dark:bg-gray-950/50
         "
     >
         <div class="flex justify-start">

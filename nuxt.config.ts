@@ -11,4 +11,9 @@ export default defineNuxtConfig({
     '@nuxt/ui'
   ],
   css: ['~/assets/css/main.css'],
+  runtimeConfig: {
+    public: {
+      serverUrl: process.env.SERVER_URL,
+    }
+  },
 })

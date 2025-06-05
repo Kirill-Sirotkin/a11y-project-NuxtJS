@@ -1,6 +1,9 @@
 export default defineNuxtRouteMiddleware(async (_to, _from) => {
     if (import.meta.server) return
 
+    const accessTokenCookie = useCookie('access-token')
+    const refreshTokenCookie = useCookie('refresh-token')
+
     const accessToken = localStorage.getItem('access-token')
     console.log('Loaded from localStorage access:', accessToken)
     const refreshToken = localStorage.getItem('refresh-token')
@@ -11,6 +14,8 @@ export default defineNuxtRouteMiddleware(async (_to, _from) => {
 
     localStorage.setItem('access-token', res.accessToken)
     localStorage.setItem('refresh-token', res.refreshToken)
+    accessTokenCookie.value = res.accessToken
+    refreshTokenCookie.value = res.refreshToken
 
     if (res.ok) {
         // return navigateTo(_to.fullPath)

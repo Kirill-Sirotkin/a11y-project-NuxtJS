@@ -1,29 +1,37 @@
 <script setup lang="ts"></script>
 
 <template>
-    <div class="flex flex-col p-4 overflow-x-hidden">  
+    <div class="flex flex-col py-4 px-10 overflow-x-hidden">  
         <section class="pr-10 fade-in-left">
             <h1 class="text-4xl md:text-7xl font-bold">
-                About Us
+                Making the Web<br>Accessible for Everyone
             </h1>
             <p class="text-lg md:text-2xl pl-4 md:pl-10 pt-4 text-justify">
-                Welcome to <span class="font-bold">My <span class="text-primary">AC</span> Help!</span> We are dedicated to bringing Accessibility to the web. Our mission is to provide tools and resources that help make the internet more accessible for everyone, regardless of their abilities or disabilities. We believe that everyone should have equal access to information and services online, and we are committed to making that a reality.
+                We believe that digital accessibility isn’t a luxury, it’s a right. Our mission is to help businesses, freelancers, and developers create websites that everyone can use, regardless of ability.
             </p>
         </section>
         <section class="mt-10 pr-10 fade-in-right">
-            <h1 class="text-4xl md:text-7xl font-bold">
-                Our Values
+            <h1 class="text-3xl md:text-7xl font-bold">
+                Our Story
             </h1>
             <p class="text-lg md:text-2xl pl-4 md:pl-10 pt-4 text-justify">
-                We value transparency, clarity, and simplicity in everything we do. We strive to create a user-friendly experience that is easy to navigate and understand. Our team is passionate about accessibility and is constantly working to improve our tools and resources to better serve our users.
+                This project started with a simple question: <br><span class="italic">Why is it so hard for small businesses to know if their websites are accessible?</span><br><br>As accessibility laws tighten across the EU, we realized that most tools are too complex, too technical, or too expensive. So, we set out to build a scanner that’s simple, fast, and actually helpful, even if you're not a developer.
             </p>
         </section>
-        <section class="mt-10 mb-10 pr-10 fade-in-left">
-            <h1 class="text-4xl md:text-7xl font-bold">
-                Why It's Important
+        <section class="mt-10 pr-10 fade-in-left">
+            <h1 class="text-3xl md:text-7xl font-bold">
+                Who We Are
             </h1>
             <p class="text-lg md:text-2xl pl-4 md:pl-10 pt-4 text-justify">
-                Accessibility is not just a legal requirement; it is a moral obligation. The internet should be a place where everyone can participate, regardless of their abilities. By making our tools and resources accessible, we are helping to create a more inclusive online environment for all.    
+                We’re a small team based in Helsinki, Finland, combining tech, design, and accessibility know-how to bring a cleaner, more user-friendly approach to compliance.    
+            </p>
+        </section>
+        <section class="mt-10 mb-10 pr-10 fade-in-right">
+            <h1 class="text-3xl md:text-7xl font-bold">
+                Why It Matters
+            </h1>
+            <p class="text-lg md:text-2xl pl-4 md:pl-10 pt-4 text-justify">
+                Accessible websites mean more visitors, better user experience, and legal peace of mind. We're here to make sure no one gets left behind and that no business gets fined for something they can easily fix.    
             </p>
         </section>
     </div>
